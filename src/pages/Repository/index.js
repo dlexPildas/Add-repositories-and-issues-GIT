@@ -69,7 +69,9 @@ class Repository extends React.Component {
 
   //advance to next page
   nextPage = () => {
-    const { currentPage, filter } = this.state
+    const { currentPage, filter, issues } = this.state
+
+    if(issues.length < 30) return 
 
     const pageNumber = currentPage+1
 
